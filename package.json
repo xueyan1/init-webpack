@@ -1,0 +1,44 @@
+{
+  "name": "init-webpack",
+  "version": "1.0.0",
+  "description": "详解webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xueyan1/init-webpack.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "xueyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xueyan1/init-webpack/issues"
+  },
+  "homepage": "https://github.com/xueyan1/init-webpack#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.1.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "node-sass": "^4.12.0",
+    "px2rem-loader": "^0.1.9",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.7",
+    "webpack": "^4.38.0"
+  }
+}
