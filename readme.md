@@ -227,3 +227,38 @@ module.exports = {
       }
     },
   ```
+
+- 省略引用的结尾如.vue
+
+  ```js
+  resolve: {
+       extensions: ['.js', '.json', '.jsx', '.css', '.scss', '.vue'],
+  }
+  ```
+
+- npm scripts。在 package.json 中的 scripts 中设置。
+
+  ```js
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",// 运行
+    "watch":"webpack --watch",          // 开启watch模式
+    "build":"webpack --env.production"  //构建生产环境
+  },
+  ```
+
+#### 配置 ESLint
+
+1. 安装 npm install eslint --save-dev
+2. 配置文件:以下每个配置文件都可以，如果有多个，按照以下顺序优先。[配置详情](https://eslint.org/)
+
+   - eslintrc.js
+   - eslintrc.yaml
+   - eslintrc.yml
+   - eslintrc.json
+   - eslintrc
+   - package.json
+
+3. 官方推荐的插件 [eslint-plugin-vue](https://github.com/xueyan1/eslint-plugin-vue)
+
+   [demo](https://mysticatea.github.io/vue-eslint-demo/)

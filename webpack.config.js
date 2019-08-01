@@ -4,7 +4,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-module.exports = evn => {
+module.exports = env => {
+  if (!env) {
+    env = {}
+  }
+  let plugins = [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './app/views/index.html'
+    })
+  ]
+  if (env.production) {
+    plugins.push(
+      new VueLoaderPlugin(),
+      new ExtractTextPlugin('style.css'),
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: 'production'
+        }
+      })
+    )
+  }
   return {
     entry: {
       app: './app/js/main.js'
@@ -48,15 +68,9 @@ module.exports = evn => {
         }
       ]
     },
-    plugins: [
-      new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        template: './app/views/index.html'
-      }),
-      new VueLoaderPlugin(),
-      new ExtractTextPlugin('style.css')
-    ], // 插件
+    plugins, // 插件
     resolve: {
+      extensions: ['.js', '.json', '.jsx', '.css', '.scss', '.vue'],
       alias: {
         vue$: 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
       }
